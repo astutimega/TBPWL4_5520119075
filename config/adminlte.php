@@ -243,7 +243,7 @@ return [
         ],
 
         [
-            'text'        => 'Buku',
+            'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/books',
             'icon'        => 'fas fa-fw fa-book',
             'can'         => 'isAdmin',
