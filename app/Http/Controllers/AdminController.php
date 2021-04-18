@@ -68,6 +68,7 @@ class AdminController extends Controller
             $extension = $req->file('cover')->extension();
 
             $filename = 'cover_buku' . time() . '.' . $extension;
+
             $req->file('cover')->storeAs(
                 'public/cover_buku',
                 $filename
@@ -101,7 +102,6 @@ class AdminController extends Controller
 
         return redirect()->route('admin.books')->with($notification);
     }
-    
 
-   
 }
+

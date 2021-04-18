@@ -79,6 +79,11 @@
 
         <style>
         /* The grid: Four equal columns that floats next to each other */
+
+        h1{
+          text-align: center;
+    
+        }
 .column {
   float: left;
   width: 25%;

@@ -118,12 +118,13 @@
   </div>
 
   <div class="modal fade" id="editBukuModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog ">  <!-- modal-lg -->
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Barang</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>  <!-- &times; -->
+           
           </button>
         </div>
         <div class="modal-body">
@@ -137,15 +138,15 @@
                       <input type="text" class="form-control" name="nama" id="edit-nama" required/>
                   </div>
                   <div class="form-group">
-                  <label for="kategori">Kategori</label>
-                  <select id="kategori" name="kategori">
+                  <label for="edit-kategori">Kategori</label>
+                  <select id="edit-kategori" name="kategori">
                         <option value="kategori">--.--</option>
                         <option value="skincare">Skincare</option>
                         </select>
               </div>
               <div class="form-group">
-                  <label for="merek">Merek</label>
-                  <select id="merek" name="merek">
+                  <label for="edit-merek">Merek</label>
+                  <select id="edit-merek" name="merek">
                         <option value="merek">--.--</option>
                         <option value="innisfree">Innisfree</option>
                         </select>
@@ -229,11 +230,11 @@
 @section('js')
     <script>
         $(function(){
-            $("#datepicker").datepicker( {
-                format: "yyyy", // Notice the Extra space at the beginning
-                viewMode: "years",
-                minViewMode: "years"
-            });
+            // $("#datepicker").datepicker( {
+            //     format: "yyyy", // Notice the Extra space at the beginning
+            //     viewMode: "years",
+            //     minViewMode: "years"
+            // });
             $(document).on('click', '#btn-edit-buku', function(){
                 let id = $(this).data('id');
 
