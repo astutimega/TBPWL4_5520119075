@@ -47,16 +47,16 @@ class BookController extends Controller
         $book->harga = $req->get('harga');
         $book->stok = $req->get('stok');
 
-        if ($req->hasFile('foto')) {
-            $extension = $req->file('foto')->extension();
+        if ($req->hasFile('cover')) {
+            $extension = $req->file('cover')->extension();
 
             $filename = 'cover_buku_'.time().'.'.$extension;
 
-            $req->file('foto')->storeAs(
+            $req->file('cover')->storeAs(
                 'public/cover_buku', $filename
             );
 
-            $book->foto = $filename;
+            $book->cover = $filename;
         }
 
         $book->save();
@@ -110,18 +110,18 @@ class BookController extends Controller
         $book->stok = $req->get('stok');
 
 
-        if ($req->hasFile('foto')) {
-            $extension = $req->file('foto')->extension();
+        if ($req->hasFile('cover')) {
+            $extension = $req->file('cover')->extension();
 
             $filename = 'cover_buku_'.time().'.'.$extension;
 
-            $req->file('foto')->storeAs(
+            $req->file('cover')->storeAs(
                 'public/cover_buku', $filename
             );
 
             Storage::delete('public/cover_buku/'.$req->get('old_cover'));
 
-            $book->foto = $filename;
+            $book->cover = $filename;
         }
 
         $book->save();

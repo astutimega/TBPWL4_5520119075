@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Book;
-use PDF;
+
 
 class AdminController extends Controller
 {
@@ -25,10 +25,11 @@ class AdminController extends Controller
     {
         $book = new Book;
 
-        $book->judul = $req->get('judul');
-        $book->penulis = $req->get('penulis');
-        $book->tahun = $req->get('tahun');
-        $book->penerbit = $req->get('penerbit');
+        $book->nama = $req->get('nama');
+        $book->kategori = $req->get('kategori');
+        $book->merek = $req->get('merek');
+        $book->harga = $req->get('harga');
+        $book->stok = $req->get('stok');
 
         if ($req->hasFile('cover')) {
             $extension = $req->file('cover')->extension();
@@ -44,21 +45,24 @@ class AdminController extends Controller
         $book->save();
 
         $notification = array(
-            'message' => 'Data buku berhasil ditambahkan',
+            'message' => 'Barang berhasil ditambahkan',
             'alert-type' => 'success'
         );
 
         return redirect()->route('admin.books')->with($notification);
     }
 
-public function update_book(Request $req)
+   
+
+    public function update_book(Request $req)
     {
         $book = Book::find($req->get('id'));
 
-        $book->judul = $req->get('judul');
-        $book->penulis = $req->get('penulis');
-        $book->tahun = $req->get('tahun');
-        $book->penerbit = $req->get('penerbit');
+        $book->nama = $req->get('nama');
+        $book->kategori = $req->get('kategori');
+        $book->merek = $req->get('merek');
+        $book->harga = $req->get('harga');
+        $book->stok = $req->get('stok');
 
         if ($req->hasFile('cover')) {
             $extension = $req->file('cover')->extension();
@@ -75,7 +79,7 @@ public function update_book(Request $req)
         $book->save();
 
         $notification = array(
-            'message' => 'Data buku berhasil diubah',
+            'message' => 'Barang berhasil diubah',
             'alert-type' => 'success'
         );
 
@@ -91,17 +95,13 @@ public function update_book(Request $req)
         $book->delete();
 
         $notification = array(
-            'message' => 'Data Buku Berhasil Dihapus',
+            'message' => 'Barang Berhasil Dihapus',
             'alert-type' => 'succes'
         );
 
         return redirect()->route('admin.books')->with($notification);
     }
-   
+    
 
-    public function getDataBuku($id)
-    {
-        $buku = Book::find($id);
-        return response()->json($buku);
-    }
+   
 }
