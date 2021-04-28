@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BrandsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,4 +56,25 @@ Route::get('admin/ajaxadmin/dataBuku/{id}', [BookController::class, 'getDataBuku
 // HAPUS BARANG
 Route::delete('admin/books/delete', [BookController::class, 'destroy'])
     ->name('admin.book.delete')
+    ->middleware('is_admin');
+
+// BRANDS
+Route::get('admin/merek', [App\Http\Controllers\BrandsController::class, 'index'])
+    ->name('admin.merek')
+    ->middleware('is_admin');
+
+//route tambah 
+Route::post('admin/merek', [BrandsController::class, 'tambah_brand'])
+    ->name('admin.brand.submit')
+    ->middleware('is_admin');
+
+//route edit
+Route::patch('admin/merek/update', [BrandsController::class, 'update_brands'])
+    ->name('admin.brand.update')
+    ->middleware('is_admin');
+Route::get('admin/ajaxadmin/dataBrands/{id}', [BrandsController::class, 'getDataBrands']);
+
+//route delete
+Route::delete('admin/merek/delete', [BrandsController::class, 'delete_brands'])
+    ->name('admin.brand.delete')
     ->middleware('is_admin');
