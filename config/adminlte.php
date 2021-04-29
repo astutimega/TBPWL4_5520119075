@@ -234,35 +234,35 @@ return [
             'text'        => 'Dasboard',
             'url'         => 'home',
             'icon'        => 'fab fa-pagelines',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
         ],
 
         [
             'text'        => 'User',
             'url'         => '',
             'icon'        => 'fab fa-pagelines',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
         ],
 
         [
             'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/books',
-            'icon'        => 'fab fa-pagelines',
-            'can'         => 'isAdmin',
+            'icon'        => 'fas fa-clinic-medical',
+            'can'         => ['isUser', 'isAdmin']
         ],
 
         [
             'text'        => 'Kategori Skincare',
             'url'         => 'admin/kategori',
             'icon'        => 'fas fa-seedling',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
         ],
 
         [
             'text'        => 'Merek Skincare',
             'url'         => 'admin/merek',
             'icon'        => 'fas fa-leaf',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
         ],
 
         [

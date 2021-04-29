@@ -30,35 +30,31 @@ Route::get('admin/home', [AdminController::class, 'index'])
     ->name('admin.home')
     ->middleware('is_admin');
 
+    
+//PENGELOLAAN BUKU
 Route::get('admin/books', [BookController::class, 'index'])
-    ->name('admin.books')
-    ->middleware('is_admin');
+    ->name('admin.books');
+    // ->middleware('is_admin');
 
 Route::post('admin/books', [BookController::class, 'store'])
-    ->name('admin.book.submit')
-    ->middleware('is_admin');
+    ->name('admin.book.submit');
+    // ->middleware('is_admin');
 
-//PENGELOLAAN BUKU
-Route::post('admin/books', [AdminController::class, 'submit_book'])
-    ->name('admin.book.submit')
-    ->middleware('is_admin');
+Route::post('admin/books', [BookController::class, 'submit_book'])
+    ->name('admin.book.submit');
+    // ->middleware('is_admin');
 
-// update BUKU
+//UPDATE BOOK
 Route::patch('admin/books/update', [BookController::class, 'update'])
-    ->name('admin.book.update')
-    ->middleware('is_admin');
+    ->name('admin.book.update');
+    // ->middleware('is_admin');
 
-Route::patch('admin/books/update', [AdminController::class, 'update_book'])
-    ->name('admin.book.update')
-    ->middleware('is_admin');
+Route::get('admin/ajaxadmin/dataBook/{id}', [BookController::class, 'getDataBook']);
 
-Route::get('admin/ajaxadmin/dataBuku/{id}', [BookController::class, 'getDataBuku']);
-
-// HAPUS BARANG
 Route::delete('admin/books/delete', [BookController::class, 'destroy'])
-    ->name('admin.book.delete')
-    ->middleware('is_admin');
-
+    ->name('admin.book.delete');
+    // ->middleware('is_admin');
+    
 // BRANDS
 Route::get('admin/merek', [App\Http\Controllers\BrandsController::class, 'index'])
     ->name('admin.merek')
