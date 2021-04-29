@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'MegSkin',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Meg</b>Skin',
+    'logo_img' => 'vendor/adminlte/dist/img/mk.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -230,11 +230,31 @@ return [
             'topnav' => true,
         ],
         
+        [
+            'text'        => 'Dasboard',
+            'url'         => 'home',
+            'icon'        => 'fab fa-pagelines',
+            'can'         => 'isAdmin',
+        ],
+
+        [
+            'text'        => 'User',
+            'url'         => '',
+            'icon'        => 'fab fa-pagelines',
+            'can'         => 'isAdmin',
+        ],
 
         [
             'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/books',
             'icon'        => 'fab fa-pagelines',
+            'can'         => 'isAdmin',
+        ],
+
+        [
+            'text'        => 'Kategori Skincare',
+            'url'         => 'admin/kategori',
+            'icon'        => 'fas fa-seedling',
             'can'         => 'isAdmin',
         ],
 
@@ -246,77 +266,100 @@ return [
         ],
 
         [
-            'text'        => 'Kategori Skincare',
-            'url'         => 'admin/kategori',
-            'icon'        => 'fas fa-seedling',
-            'can'         => 'isAdmin',
-        ],
-
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'profile',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'profile',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
+            'text'    => 'Laporan',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Laporan Barang Masuk',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => 'Laporan Barang Masuk',
                     'url'     => '#',
                     'submenu' => [
                         [
-                            'text' => 'level_two',
+                            'text' => 'Laporan Barang Keluar',
                             'url'  => '#',
                         ],
                         [
-                            'text'    => 'level_two',
+                            'text'    => 'Laporan Barang Keluar',
                             'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
+                            
                         ],
                     ],
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Laporan Barang Masuk',
                     'url'  => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'profile',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'profile',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+        // [
+        //     'text'    => 'multilevel',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'level_one',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'level_two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
