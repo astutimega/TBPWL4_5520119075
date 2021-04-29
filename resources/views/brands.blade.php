@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Merek')
+@section('title', 'Merek Skincare')
 
 @section('content_header')
-<h1 class="text-center text-bold">MEREK/BRAND</h1>
+<h1 class="text-center text-bold">MEREK SKINCARE</h1>
 @stop
 
 @section('content')
@@ -60,7 +60,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Merek/Brand</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Merek</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -69,7 +69,7 @@
                 <form method="post" action="{{ route('admin.brand.submit') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="brand">Nama Merek/Brand</label>
+                        <label for="brand">Nama Merek</label>
                         <input type="text" class="form-control" placeholder="Masukan nama Merek" name="brand" id="brand" required />
                     </div>
                     <div class="form-group">
@@ -107,7 +107,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="edit-brand">Nama Merek/Brand</label>
+                                <label for="edit-brand">Nama Merek</label>
                                 <input type="text" class="form-control" name="brand" id="edit-brand" required />
                             </div>
                             <div class="form-group">
@@ -135,13 +135,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Merek/Brand</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Merek</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Apakah anda yakin ingin menghapus Data Merek/Brand <strong class="" id="delete-brand"></strong>?
+                Apakah anda yakin ingin menghapus Data Merek<strong class="" id="delete-brand"></strong>?
                 <form method="post" action="{{ route('admin.brand.delete') }}" enctype="multipart/form-data">
                     @csrf
                     @method('DELETE')

@@ -234,21 +234,21 @@ return [
         [
             'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/books',
-            'icon'        => 'fa fa-shopping-bag',
+            'icon'        => 'fab fa-pagelines',
             'can'         => 'isAdmin',
         ],
 
         [
             'text'        => 'Merek Skincare',
             'url'         => 'admin/merek',
-            'icon'        => 'fas fa-chalkboard',
+            'icon'        => 'fas fa-leaf',
             'can'         => 'isAdmin',
         ],
 
         [
             'text'        => 'Kategori Skincare',
             'url'         => 'admin/kategori',
-            'icon'        => 'fas fa-book-reader',
+            'icon'        => 'fas fa-seedling',
             'can'         => 'isAdmin',
         ],
 

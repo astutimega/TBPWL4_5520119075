@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,4 +78,23 @@ Route::get('admin/ajaxadmin/dataBrands/{id}', [BrandsController::class, 'getData
 //route delete
 Route::delete('admin/merek/delete', [BrandsController::class, 'delete_brands'])
     ->name('admin.brand.delete')
+    ->middleware('is_admin');
+
+
+// KATEGORI
+Route::get('admin/kategori', [CategoriesController::class, 'index'])
+    ->name('admin.kategori')
+    ->middleware('is_admin');
+Route::post('admin/kategori', [CategoriesController::class, 'tambah_categories'])
+    ->name('admin.kategori.submit')
+    ->middleware('is_admin');
+//route edit categories
+Route::patch('admin/kategori/update', [CategoriesController::class, 'update_categories'])
+    ->name('admin.kategori.update')
+    ->middleware('is_admin');
+Route::get('admin/ajaxadmin/dataCategories/{id}', [CategoriesController::class, 'getDataCategories']);
+
+//route delete categories
+Route::delete('admin/kategori/delete', [CategoriesController::class, 'delete_categories'])
+    ->name('admin.kategori.delete')
     ->middleware('is_admin');
