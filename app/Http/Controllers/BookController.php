@@ -27,13 +27,13 @@ class BookController extends Controller
 
     public function store(Request $req)
     {
-        $Book = new Book;
+        $books = new Book;
 
-        $Book->nama = $req->get('nama');
-        $Book->categories = $req->get('categories');
-        $Book->brands = $req->get('brands');
-        $Book->stok = $req->get('stok');
-        $Book->harga = $req->get('harga');
+        $books->nama = $req->get('nama');
+        $books->categories_id = $req->get('categories_id');
+        $books->brands_id = $req->get('brands_id');
+        $books->stok = $req->get('stok');
+        $books->harga = $req->get('harga');
         
 
         if ($req->hasFile('cover')) {
@@ -45,10 +45,10 @@ class BookController extends Controller
                 'public/cover_Book', $filename
             );
 
-            $Book->cover = $filename;
+            $books->cover = $filename;
         }
 
-        $Book->save();
+        $books->save();
 
         $notification = array(
             'message' => 'Barang berhasil ditambahkan',
@@ -61,13 +61,13 @@ class BookController extends Controller
 
     public function submit_Book(Request $req)
     {
-        $Book = new Book;
+        $books = new Book;
 
-        $Book->nama = $req->get('nama');
-        $Book->categories = $req->get('categories');
-        $Book->brands = $req->get('brands');
-        $Book->stok = $req->get('stok');
-        $Book->harga = $req->get('harga');
+        $books->nama = $req->get('nama');
+        $books->categories_id = $req->get('categories_id');
+        $books->brands_id = $req->get('brands_id');
+        $books->stok = $req->get('stok');
+        $books->harga = $req->get('harga');
 
         if ($req->hasFile('cover')) {
             $extension = $req->file('cover')->extension();
@@ -78,9 +78,9 @@ class BookController extends Controller
                 $filename
             );
 
-            $Book->cover = $filename;
+            $books->cover = $filename;
         }
-        $book->save();
+        $books->save();
 
         $notification = array(
             'message' => 'Barang berhasil ditambahkan',
@@ -90,16 +90,7 @@ class BookController extends Controller
         return redirect()->route('admin.books')->with($notification);
     }
   
-    public function show(Book $Book)
-    {
-        //
-    }
-
-    public function edit(Book $Book)
-    {
-        //
-    }
-
+   
         /**
      * Update the specified resource in storage.
      *
@@ -110,13 +101,13 @@ class BookController extends Controller
     
     public function update(Request $req)
     {
-        $Book = Book::find($req->get('id'));
+        $books = Book::find($req->get('id'));
 
-        $Book->nama = $req->get('nama');
-        $Book->categories = $req->get('categories');
-        $Book->brands = $req->get('brands');
-        $Book->stok = $req->get('stok');
-        $Book->harga = $req->get('harga');
+        $books->nama = $req->get('nama');
+        $books->categories_id = $req->get('categories_id');
+        $books->brands_id = $req->get('brands_id');
+        $books->stok = $req->get('stok');
+        $books->harga = $req->get('harga');
 
 
         if ($req->hasFile('cover')) {
@@ -130,10 +121,10 @@ class BookController extends Controller
 
             Storage::delete('public/cover_Book/'.$req->get('old_cover'));
 
-            $Book->cover = $filename;
+            $books->cover = $filename;
         }
 
-        $Book->save();
+        $books->save();
 
         $notification = array(
             'message' => 'Barang berhasil diubah',
@@ -152,15 +143,15 @@ class BookController extends Controller
      */
     public function getDataBook($id)
     {
-        $Book = Book::find($id);
+        $books = Book::find($id);
 
-        return response()->json($Book);
+        return response()->json($books);
     }
     public function destroy(Request $req)
     {
-        $Book = Book::find($req->id);
+        $books = Book::find($req->id);
         Storage::delete('public/cover_Book/'.$req->get('old_cover'));
-        $Book->delete();
+        $books->delete();
      
         $notification = array(
             'message' => 'Barang berhasil dihapus',
@@ -173,11 +164,11 @@ class BookController extends Controller
 
         public function delete_Book(Request $req)
     {
-        $Book = Book::find($req->get('id'));
+        $books = Book::find($req->get('id'));
 
         storage::delete('public/cover_Book/'.$req->get('old_cover'));
 
-        $Book->delete();
+        $books->delete();
 
         $notification = array(
             'message' => 'Barang Berhasil Dihapus',

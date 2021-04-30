@@ -39,8 +39,8 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $book->nama }}</td>
-                                    <td>{{ $book->categories }}</td>
-                                    <td>{{ $book->brands }}</td>
+                                    <td>{{ $book->categories_id }}</td>
+                                    <td>{{ $book->brands_id }}</td>
                                     <td>{{ $book->stok }}</td>
                                     <td>{{ $book->harga }}</td>
                                     
@@ -84,12 +84,12 @@
                   <input type="text" class="form-control" name="nama" id="nama" required/>
               </div>
               <div class="form-group">
-                <label for="categories">Kategori</label>
-                <input type="text" class="form-control" name="categories" id="categories" required/>
+                <label for="categories_id">Kategori</label>
+                <input type="text" class="form-control" name="categories_id" id="categories_id" required/>
             </div>
             <div class="form-group">
-              <label for="brands">Brand</label>
-              <input type="text" class="form-control" name="brands" id="brands" required/>
+              <label for="brands_id">Brand</label>
+              <input type="text" class="form-control" name="brands_id" id="brands_id" required/>
             </div>
               <div class="form-group">
                   <label for="stok">Jumlah</label>

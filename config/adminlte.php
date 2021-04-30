@@ -241,7 +241,7 @@ return [
             'text'        => 'User',
             'url'         => '',
             'icon'        => 'fab fa-pagelines',
-            'can'         => ['isUser', 'isAdmin']
+            'can'         =>  'isAdmin',
         ],
 
         [
@@ -274,23 +274,8 @@ return [
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'Laporan Barang Masuk',
+                    'text'    => 'Laporan Barang Keluar',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Laporan Barang Keluar',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Laporan Barang Keluar',
-                            'url'     => '#',
-                            
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Laporan Barang Masuk',
-                    'url'  => '#',
                 ],
             ],
         ],
