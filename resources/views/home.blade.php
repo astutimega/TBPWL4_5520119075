@@ -28,7 +28,7 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #1abc9c;
+  /* background: #1abc9c; */
   color: white;
 }
 
@@ -40,7 +40,7 @@ body {
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: white;
 }
 
 /* Style the navigation bar links */
