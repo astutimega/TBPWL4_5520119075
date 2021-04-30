@@ -124,13 +124,13 @@ body {
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="vendor/adminlte/dist/img/1.jpg" class="d-block w-100" alt="...">
+  <img src="{{ '../vendor/adminlte/dist/img/1.jpg' }}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="vendor/adminlte/dist/img/orchid.jpg" class="d-block w-100" alt="...">
+      <img src="{{ '../vendor/adminlte/dist/img/orchid.jpg' }}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="vendor/adminlte/dist/img/sparkling.jpg" class="d-block w-100" alt="...">
+      <img src=" {{ '../vendor/adminlte/dist/img/sparkling.jpg' }}" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -162,7 +162,7 @@ body {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="card">
-  <img src="vendor/adminlte/dist/img/3.jpeg" alt="jhon" style="width:100%">
+  <img src="{{ '../vendor/adminlte/dist/img/3.jpeg' }}" alt="jhon" style="width:100%">
   <h4>Astuti Mega</h4>
   <p class="title">IF C 2019</p>
   <p>Universitas Suryakancana</p>
@@ -173,21 +173,21 @@ body {
   <div class="main">
     <h2>INNISFREE</h2>
     <h5>Cianjur, April 1, 2021</h5>
-    <img src="vendor/adminlte/dist/img/4.jpg" alt="" style="width:100%">
+<img src="{{ '../vendor/adminlte/dist/img/4.jpg' }}" alt="" style="width:100%">
     <p>Innisfree adalah merek all-natural pertama Korea Selatan, dan banyak bahan produk bersumber dari Pulau Jeju. Produk perusahaan berkisar dari makeup hingga produk perawatan kulit untuk wanita dan untuk pria. Produk Innisfree termasuk Super Volcanic Pore Clay Mask,[14] Olive Real Cleansing Foam,[15] dan Wine Peeling Jelly Softene</p>
     <br>
     <h2>LANEIGE</h2>
     <h5>Cianjur, April 1, 2021</h5>
-    <img src="vendor/adminlte/dist/img/5.jpg" alt="" style="width:100%">
+    <img src="{{ '../vendor/adminlte/dist/img/5.jpg' }}" alt="" style="width:100%">
     <p>Laneige mengembangkan produk perawatan kulit, dengan beberapa bahan baku, yakni bahan kimia (magnesium, mangan, dan seng), bahan alami (khamir truffle dan teh hijau), serta bahan medis (asam salisilat, keratinase, ghassoul, dan melia yang diekstrak dari pepagannya).</p>
     <h2>NACIFIC</h2>
     <h5>Cianjur, April 1, 2021</h5>
-    <img src="vendor/adminlte/dist/img/5.jpg" alt="" style="width:100%">
-    <p>Laneige mengembangkan produk perawatan kulit, dengan beberapa bahan baku, yakni bahan kimia (magnesium, mangan, dan seng), bahan alami (khamir truffle dan teh hijau), serta bahan medis (asam salisilat, keratinase, ghassoul, dan melia yang diekstrak dari pepagannya).</p>
+    <img src="{{ '../vendor/adminlte/dist/img/6.jpg' }}" alt="" style="width:100%">
+    <p>Nacific mengembangkan produk perawatan kulit, dengan beberapa bahan baku, yakni bahan kimia (magnesium, mangan, dan seng), bahan alami (khamir truffle dan teh hijau), serta bahan medis (asam salisilat, keratinase, ghassoul, dan melia yang diekstrak dari pepagannya).</p>
   </div>
 </div>
 
-<div class="footer">
+<div class="footer">  
   <h2>Footer</h2>
 </div>
 

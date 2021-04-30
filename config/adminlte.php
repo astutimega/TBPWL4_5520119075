@@ -239,7 +239,7 @@ return [
 
         [
             'text'        => 'User',
-            'url'         => '',
+            'url'         => 'admin/users',
             'icon'        => 'fab fa-pagelines',
             'can'         =>  'isAdmin',
         ],

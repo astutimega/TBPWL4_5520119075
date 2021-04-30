@@ -71,11 +71,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama Skincare</label>
-                        <input type="text" class="form-control" placeholder="Masukan kategori barang" name="nama" id="nama" required />
+                        <input type="text" class="form-control" placeholder="Masukan nama Skincare" name="nama" id="nama" required />
                     </div>
                     <div class="form-group">
                         <label for="tipeKulit">Tipe Kulit</label>
-                        <input type="text" class="form-control" placeholder="Masukan tipeKulit barang" name="tipeKulit" id="tipeKulit" required />
+                        <input type="text" class="form-control" placeholder="Masukan Tipe Kulit " name="tipeKulit" id="tipeKulit" required />
                     </div>
                     <div class="form-group">
                         <label for="keterangan">Keterangan</label>
