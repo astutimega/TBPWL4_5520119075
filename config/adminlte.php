@@ -270,12 +270,14 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Laporan Barang Masuk',
-                    'url'  => '#',
+                    'text' => 'Barang Masuk',
+                    'url'  => 'admin/masuk',
+                    'can'         =>  'isAdmin',
                 ],
                 [
-                    'text'    => 'Laporan Barang Keluar',
-                    'url'     => '#',
+                    'text'    => 'Barang Keluar',
+                    'url'     => 'admin/keluar',
+                    'can'         =>  'isAdmin',
                 ],
             ],
         ],

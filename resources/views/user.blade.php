@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
         <div class="card">
@@ -16,11 +16,13 @@
             
                        {{-- <button class="btn btn-secondary float-right" data-toggle="modal"><a href="{{ route('admin.print.users') }}" target="_blank"><i class="fa fa-print"></i> Cetak PDF</a></button> --}}
                 </div>
-                    <div class="card-body">
-                      <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
+                <div class="card-body">
+                      <button class="btn btn-primary float-left mr-3" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
                       <div class="btn-group mb-5" role="group" aria-label="Basis Example">
                       </div>
-                        <table id="table-data" class="table table-bordered display nowrap" style="width:100%">
+                      <div class="table-responsive">
+                        <table id="table-data" class="table">
+
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -100,11 +102,7 @@
             </div>
               <div class="form-group">
                   <label for="roles_id">Roles</label>
-                  <select class="custom-select" name="roles" placeholder="Masukan Roles" id="roles" aria-label="Example select with button addon">
-                <option selected>Pilih Roles</option>
-                <option>Admin</option>
-                <option>User</option>
-              </select>
+                  <input type="text" class="form-control" name="roles_id" id="roles_id" required/>
               </div>
             
               <div class="form-group">
@@ -153,14 +151,10 @@
                   <label for="edit-password">Password</label>
                   <input type="text" class="form-control" name="password" id="edit-password" required/>
                 </div>
-                <div class="form-group">
-                  <label for="roles_id">Roles</label>
-                  <select class="custom-select" name="roles" placeholder="Masukan Roles" id="roles" aria-label="Example select with button addon">
-                <option selected>Pilih Roles</option>
-                <option>Admin</option>
-                <option>User</option>
-              </select>
-              </div>
+                  <div class="form-group">
+                      <label for="edit-roles_id">Roles</label>
+                      <input type="text" class="form-control" name="roles_id" id="edit-roles_id" required/>
+                  </div>
                   
               </div>
               <div class="col-md-6">
