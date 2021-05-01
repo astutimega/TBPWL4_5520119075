@@ -24,7 +24,7 @@
                         <thead>
                             <tr>
                                 <th>NO</th>
-                                <th>NAMA SKINCARE</th>
+                                <th>KATEGORI</th>
                                 <th>TIPE KULIT</th>
                                 <th>KETERANGAN</th>
                                 <th>AKSI</th>
@@ -70,8 +70,8 @@
                 <form method="post" action="{{ route('admin.kategori.submit') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama Skincare</label>
-                        <input type="text" class="form-control" placeholder="Masukan nama Skincare" name="nama" id="nama" required />
+                        <label for="nama">Kategori</label>
+                        <input type="text" class="form-control" placeholder="Masukan Kategori" name="nama" id="nama" required />
                     </div>
                     <div class="form-group">
                         <label for="tipeKulit">Tipe Kulit</label>
@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="edit-nama">Nama Skincare</label>
+                                <label for="edit-nama">Kategori</label>
                                 <input type="text" class="form-control" name="nama" id="edit-nama" required />
                             </div>
                             <div class="form-group">
@@ -163,6 +163,14 @@
 </div>
 
 <!-- Modal Hapus Data -->
+@stop
+
+@section('footer')
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 1.0.0
+    </div>
+    <strong>CopyRight &copy; {{date('Y')}}
+    <a href="" target="_blank">MegSkin</a>.</strong> All Right reserved
 @stop
 
 @section('js')

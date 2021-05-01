@@ -67,53 +67,91 @@
        </div>
    </div>
 
-   <div class="modal fade" id="tambahBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="post" action="{{ route('admin.book.submit') }}" enctype="multipart/form-data">
+   {{-- Modal Add Product --}}
+<div class="modal fade" id="tambahBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Barang</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body col-md-12">
+        <form method="post" action="{{ route('admin.book.submit') }}" enctype="multipart/form-data">
           @csrf
+          <div class="container-fluid">
+            <div class="row">
               <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input type="text" class="form-control" name="nama" id="nama" required/>
+                <label for="name">Nama</label>
+                <input type="text" placeholder="Masukan Nama Barang" class="form-control" name="nama" id="nama" required />
               </div>
-              <div class="form-group">
-                <label for="categories_id">Kategori</label>
-                <input type="text" class="form-control" name="categories_id" id="categories_id" required/>
             </div>
-            <div class="form-group">
-              <label for="brands_id">Brand</label>
-              <input type="text" class="form-control" name="brands_id" id="brands_id" required/>
+          </div>
+          <div class="form-group">
+            <label for="harga">Harga</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rp.</span>
+              </div>
+              <input type="number" name="harga" min="0" placeholder="Masukan Harga" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
-              <div class="form-group">
-                  <label for="stok">Jumlah</label>
-                  <input type="text" class="form-control" name="stok" id="stok" required/>
-              </div>
-              <div class="form-group">
-                  <label for="harga">Harga</label>
-                  <input type="text" class="form-control" name="harga" id="harga" required/>
-              </div>
-            
-              <div class="form-group">
-                  <label for="cover">Gambar</label>
-                  <input type="file" class="form-control" name="cover" id="cover"/>
-              </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Tambah</button>
-          </form>
-        </div>
+          </div>
+          <div class="form-group">
+            <label for="categories_id">Kategori</label>
+            <!-- <input type="text" class="form-control" name="penerbit" id="penerbit" required /> -->
+            <div class="input-group">
+              <select class="custom-select" name="categories_id" placeholder="Masukan Kategori barang" id="categories_id" aria-label="Example select with button addon">
+                <option selected>Pilih Kategori</option>
+                @php
+                    $data = App\Models\Categories::get();
+                @endphp
+                @foreach ($data as $Categories)
+                  <option value="{{$Categories->id}}"->{{$Categories->nama}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="brands_id">Merek</label>
+            <!-- <input type="text" class="form-control" name="penerbit" id="penerbit" required /> -->
+            <div class="input-group">
+              <select class="custom-select"  name="brands_id" placeholder="Masukan Nama Brands" id="brands_id" aria-label="Example select with button addon">
+                <option selected>Pilih Merek</option>
+                @php
+                    $data = App\Models\Brands::get();
+                @endphp
+                @foreach ($data as $Brands)
+                  <option value="{{$Brands->id}}"->{{$Brands->brand}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stok">Stock Barang</label>
+            <div class="input-group">
+              <select class="custom-select" name="stok" placeholder="Masukan Keterangan Stock" id="stok" aria-label="Example select with button addon">
+                <option selected>Pilih Merek</option>
+                <option>READY</option>
+                <option>EMPTY</option>
+              </select>
+            </div>
+            {{-- <input type="text" class="form-control" name="stok" id="stok" required/> --}}
+          </div>
+          <div class="form-group">
+            <label for="cover">Gambar</label>
+            <input type="file" class="form-control" placeholder="Masukan Gambar barang" name="cover" id="cover" />
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+{{-- End Modal Add Product --}}
 
   <div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -135,17 +173,46 @@
                       <input type="text" class="form-control" name="nama" id="edit-nama" required/>
                   </div>
                   <div class="form-group">
-                    <label for="edit-categories">Kategori</label>
-                    <input type="text" class="form-control" name="categories" id="edit-categories" required/>
-                </div>
-                <div class="form-group">
-                  <label for="edit-brands">Brand</label>
-                  <input type="text" class="form-control" name="brands" id="edit-brands" required/>
-                </div>
-                  <div class="form-group">
-                      <label for="edit-stok">Jumlah</label>
-                      <input type="text" class="form-control" name="stok" id="edit-stok" required/>
-                  </div>
+            <label for="categories_id">Kategori</label>
+            <!-- <input type="text" class="form-control" name="penerbit" id="penerbit" required /> -->
+            <div class="input-group">
+              <select class="custom-select" name="categories_id" placeholder="Masukan Kategori barang" id="categories_id" aria-label="Example select with button addon">
+                <option selected>Pilih Kategori</option>
+                @php
+                    $data = App\Models\Categories::get();
+                @endphp
+                @foreach ($data as $Categories)
+                  <option value="{{$Categories->id}}"->{{$Categories->nama}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="brands_id">Merek</label>
+            <!-- <input type="text" class="form-control" name="penerbit" id="penerbit" required /> -->
+            <div class="input-group">
+              <select class="custom-select"  name="brands_id" placeholder="Masukan Nama Brands" id="brands_id" aria-label="Example select with button addon">
+                <option selected>Pilih Merek</option>
+                @php
+                    $data = App\Models\Brands::get();
+                @endphp
+                @foreach ($data as $Brands)
+                  <option value="{{$Brands->id}}"->{{$Brands->brand}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stok">Stock Barang</label>
+            <div class="input-group">
+              <select class="custom-select" name="stok" placeholder="Masukan Keterangan Stock" id="stok" aria-label="Example select with button addon">
+                <option selected>Pilih Merek</option>
+                <option>READY</option>
+                <option>EMPTY</option>
+              </select>
+            </div>
+            {{-- <input type="text" class="form-control" name="stok" id="stok" required/> --}}
+          </div>
                   <div class="form-group">
                       <label for="edit-harga">Harga</label>
                       <input type="number" class="form-control" name="harga" id="edit-harga" required/>
@@ -203,6 +270,15 @@
   </div>
 
 @stop
+
+@section('footer')
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 1.0.0
+    </div>
+    <strong>CopyRight &copy; {{date('Y')}}
+    <a href="" target="_blank">MegSkin</a>.</strong> All Right reserved
+@stop
+
 @section('css')
     <style>
         input[type=text], select, textarea {

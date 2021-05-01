@@ -161,6 +161,15 @@
 
 
 @stop
+
+@section('footer')
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 1.0.0
+    </div>
+    <strong>CopyRight &copy; {{date('Y')}}
+    <a href="" target="_blank">MegSkin</a>.</strong> All Right reserved
+@stop
+
 @section('js')
 <script>
     $(function() {
