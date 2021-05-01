@@ -268,6 +268,7 @@ return [
         [
             'text'    => 'Laporan',
             'icon'    => 'fas fa-fw fa-share',
+            'can'         =>  'isAdmin',
             'submenu' => [
                 [
                     'text' => 'Barang Masuk',
