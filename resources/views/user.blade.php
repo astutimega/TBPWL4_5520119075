@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Pengelolaan Obat')
+@section('title', 'USER')
 
 @section('content_header')
-    <h1>Pengelolaan User</h1>
+    <h1> USER</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-              {{ __('Pengelolaan User')}}
+              {{ __(' USER')}}
             
                        {{-- <button class="btn btn-secondary float-right" data-toggle="modal"><a href="{{ route('admin.print.users') }}" target="_blank"><i class="fa fa-print"></i> Cetak PDF</a></button> --}}
                 </div>
@@ -41,7 +41,7 @@
                                     <td>{{ $pengguna->name }}</td>
                                     <td>{{ $pengguna->username }}</td>
                                     <td>{{ $pengguna->email }}</td>
-                                    <td>{{ $pengguna->password }}</td>
+                                   <td>{{ $pengguna->password }}</td>
                                     <td>{{ $pengguna->roles_id }}</td>
                                     
                                     <td>
@@ -74,7 +74,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Data Obat</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Tambah User</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -218,7 +218,18 @@
         margin-bottom: 16px; /* Bottom margin */
         resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-    
+
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
     </style>
 @stop
 @section('js')
@@ -265,6 +276,11 @@
                 $('#delete-old-photo').val(photo);
                 console.log("hallo");
             });
+
+            function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
     </script>
 @stop
 @section('js')

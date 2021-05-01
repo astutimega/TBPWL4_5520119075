@@ -233,7 +233,7 @@ return [
         [
             'text'        => 'Dasboard',
             'url'         => 'home',
-            'icon'        => 'fab fa-pagelines',
+            'icon'        => 'fas fa-fan',
             'can'         => ['isUser', 'isAdmin']
         ],
 
@@ -247,7 +247,7 @@ return [
         [
             'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/books',
-            'icon'        => 'fas fa-clinic-medical',
+            'icon'        => 'fas fa-cannabis',
             'can'         => ['isUser', 'isAdmin']
         ],
 
