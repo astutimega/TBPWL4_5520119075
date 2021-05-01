@@ -100,7 +100,11 @@
             </div>
               <div class="form-group">
                   <label for="roles_id">Roles</label>
-                  <input type="text" class="form-control" name="roles_id" id="roles_id" required/>
+                  <select class="custom-select" name="roles" placeholder="Masukan Roles" id="roles" aria-label="Example select with button addon">
+                <option selected>Pilih Roles</option>
+                <option>Admin</option>
+                <option>User</option>
+              </select>
               </div>
             
               <div class="form-group">
@@ -149,10 +153,14 @@
                   <label for="edit-password">Password</label>
                   <input type="text" class="form-control" name="password" id="edit-password" required/>
                 </div>
-                  <div class="form-group">
-                      <label for="edit-roles_id">Roles</label>
-                      <input type="text" class="form-control" name="roles_id" id="edit-roles_id" required/>
-                  </div>
+                <div class="form-group">
+                  <label for="roles_id">Roles</label>
+                  <select class="custom-select" name="roles" placeholder="Masukan Roles" id="roles" aria-label="Example select with button addon">
+                <option selected>Pilih Roles</option>
+                <option>Admin</option>
+                <option>User</option>
+              </select>
+              </div>
                   
               </div>
               <div class="col-md-6">
@@ -228,17 +236,7 @@
         resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
-body {
-  padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 25px;
-}
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
     </style>
 @stop
 @section('js')
@@ -286,10 +284,8 @@ body {
                 console.log("hallo");
             });
 
-            function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}
+           
+
     </script>
 @stop
 @section('js')
