@@ -15,8 +15,8 @@ class CreateComesTable extends Migration
     {
         Schema::create('comes', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->foreign('nama')->references('nama')->on('books');
+            // $table->string('nama');
+            $table->foreignId('nama')->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
             $table->date('tanggal');
             $table->string('jumlah');
             $table->timestamps();

@@ -16,8 +16,8 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
-            $table->foreignId('categories_id')->references('id')->on('categories');
-            $table->foreignId('brands_id')->references('id')->on('brands');
+            $table->foreignId('categories_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('brands_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
             $table->string('stok');
             $table->string('harga');
             $table->string('cover')->nullable();
