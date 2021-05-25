@@ -91,7 +91,7 @@
                         <label for="jumlah">Jumlah</label>
                         <input type="text" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
                     </div>
-                    <
+                    
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

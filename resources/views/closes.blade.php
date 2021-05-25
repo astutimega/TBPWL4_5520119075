@@ -71,11 +71,21 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama Skincare</label>
-                        <input type="text" class="form-control" placeholder="Masukan nama skincare" name="nama" id="nama" required />
+                        <div class="input-group">
+                            <select class="form-control" name="nama" id="nama" placeholder="Input nama" aria-label="Example select with button addon">
+                              <option selected>Pilih....</option>
+                                @php
+                                $data=App\Models\Book::get();
+                                @endphp
+                                @foreach($data as $key)
+                                <option value="{{$key->id}}">{{$key->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
-                        <input type="text" class="form-control" name="tanggal" id="tanggal" required />
+                        <input type="text" id ="date" class="date form-control" name="tanggal" id="tanggal" required />
                     </div>
                     <div class="form-group">
                         <label for="jumlah">Jumlah</label>
@@ -111,11 +121,21 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="edit-nama">Nama Skincare</label>
-                                <input type="text" class="form-control" name="nama" id="edit-nama" required />
+                                <div class="input-group">
+                            <select class="form-control" name="nama" id="edit-nama" placeholder="Input nama" aria-label="Example select with button addon">
+                              <option selected>Pilih....</option>
+                                @php
+                                $data=App\Models\Book::get();
+                                @endphp
+                                @foreach($data as $key)
+                                <option value="{{$key->id}}">{{$key->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                             </div>
                             <div class="form-group">
                                 <label for="edit-tanggal">Tanggal</label>
-                                <input type="text" class="form-control" name="tanggal" id="edit-tanggal" required />
+                                <input type="text" id ="date" class="date form-control" name="tanggal" id="tanggal" required />
                             </div>
                             <div class="form-group">
                                 <label for="edit-jumlah">Jumlah</label>
@@ -174,6 +194,13 @@
 @section('js')
 <script>
     $(function() {
+        $("#date").datepicker({
+            format: 'yyyy-mm-dd', // Notice the Extra space at the beginning
+            autoclose: true,
+            todayHighlight: true,
+            // viewMode: "date",
+            // minViewMode: "date"
+        });
 
         $(document).on('click', '#btn-edit-closes', function() {
             let id = $(this).data('id');
